@@ -1,1 +1,70 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root,
+[data-theme="light"] {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --surface-2: #eef1f4;
+  --border: #e2e7ec;
+  --text: #0e1726;
+  --muted: #5f6b7c;
+  --accent: #0f9d6b;
+  --accent-soft: #e3f6ee;
+  --accent-text: #ffffff;
+  --ring: rgb(15 157 107 / 0.35);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0e13;
+  --surface: #11171f;
+  --surface-2: #18202a;
+  --border: #232d3a;
+  --text: #e7edf4;
+  --muted: #8a98aa;
+  --accent: #2fd492;
+  --accent-soft: #11291f;
+  --accent-text: #04140d;
+  --ring: rgb(47 212 146 / 0.35);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-fg: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-text);
+  --color-ring: var(--ring);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-surface shadow-[0_1px_2px_rgb(0_0_0/0.04)];
+  }
+  .input {
+    @apply w-full rounded-xl border border-line bg-surface px-3.5 py-2.5 text-sm text-fg outline-none transition placeholder:text-muted/70 focus:border-accent focus:ring-4 focus:ring-ring;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-fg;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-accent-fg transition hover:brightness-110 focus-visible:ring-4 focus-visible:ring-ring focus-visible:outline-none disabled:opacity-60;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-surface px-4 py-2.5 text-sm font-medium text-fg transition hover:bg-surface-2 focus-visible:ring-4 focus-visible:ring-ring focus-visible:outline-none;
+  }
+}
