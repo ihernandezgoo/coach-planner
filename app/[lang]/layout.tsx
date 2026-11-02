@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Coach Planner",
   description: "Equipos, entrenamientos y jugadores · Taldeak, entrenamenduak eta jokalariak",
+  applicationName: "Coach Planner",
+  // iOS: abrir a pantalla completa al añadirla a la pantalla de inicio
+  appleWebApp: { capable: true, title: "Coach Planner", statusBarStyle: "black-translucent" },
 };
 
 export const viewport: Viewport = {

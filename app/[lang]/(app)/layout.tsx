@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LangSwitch } from "@/components/lang-switch";
+import { InstallButton } from "@/components/install-button";
 import { Logo } from "@/components/logo";
 import { BottomNav, SidebarNav } from "@/components/nav-links";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -21,18 +22,22 @@ export default async function AppLayout({ children, params }: LayoutProps<"/[lan
         <div className="mt-8 flex-1">
           <SidebarNav lang={lang} labels={dict.nav} />
         </div>
-        <div className="flex items-center gap-2 border-t border-line pt-4">
-          <LangSwitch lang={lang} label={dict.nav.language} />
-          <ThemeToggle label={dict.nav.theme} />
+        <div className="space-y-3 border-t border-line pt-4">
+          <InstallButton dict={dict.install} variant="full" />
+          <div className="flex items-center gap-2">
+            <LangSwitch lang={lang} label={dict.nav.language} />
+            <ThemeToggle label={dict.nav.theme} />
+          </div>
         </div>
       </aside>
 
-      {/* Móvil: cabecera superior */}
-      <header className="sticky top-0 z-30 flex items-center justify-between border-b border-line bg-surface/90 px-4 py-3 backdrop-blur-lg lg:hidden">
-        <Link href={`/${lang}`}>
-          <Logo name={dict.appName} />
+      {/* Móvil: cabecera superior (respeta la muesca del móvil al abrirse como app instalada) */}
+      <header className="sticky top-0 z-30 flex items-center justify-between gap-2 border-b border-line bg-surface/90 px-4 pt-[max(0.75rem,env(safe-area-inset-top))] pb-3 backdrop-blur-lg lg:hidden">
+        <Link href={`/${lang}`} className="min-w-0">
+          <Logo name={dict.appName} nameClassName="max-[380px]:sr-only" />
         </Link>
         <div className="flex items-center gap-2">
+          <InstallButton dict={dict.install} variant="icon" />
           <LangSwitch lang={lang} label={dict.nav.language} />
           <ThemeToggle label={dict.nav.theme} />
         </div>

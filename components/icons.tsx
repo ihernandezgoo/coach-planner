@@ -153,9 +153,16 @@ export const TrashIcon = (p: IconProps) => (
   </Icon>
 );
 
-export const WhistleIcon = (p: IconProps) => (
+export const DownloadIcon = (p: IconProps) => (
   <Icon {...p}>
-    <path d="M3 10a5 5 0 1 0 9.6 2H21V8H8" />
-    <circle cx="8" cy="12" r="1.2" />
+    <path d="M12 4v11M7.5 10.5 12 15l4.5-4.5" />
+    <path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
+  </Icon>
+);
+
+export const ShareIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <path d="M12 3v12M8 7l4-4 4 4" />
+    <path d="M8 10H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-2" />
   </Icon>
 );

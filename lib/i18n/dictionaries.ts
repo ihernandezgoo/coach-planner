@@ -10,6 +10,14 @@ const es = {
     language: "Idioma",
     theme: "Cambiar tema",
   },
+  install: {
+    button: "Instalar app",
+    iosTitle: "Instalar en iPhone / iPad",
+    iosStep1: "En Safari, pulsa el botón Compartir",
+    iosStep2: "Baja y elige «Añadir a pantalla de inicio».",
+    iosStep3: "Pulsa «Añadir». La app aparecerá con su icono en la pantalla de inicio.",
+    close: "Cerrar",
+  },
   dashboard: {
     greeting: "Hola, entrenador",
     subtitle: "Así va tu semana.",
@@ -155,6 +163,14 @@ const eu: Dictionary = {
     newTeam: "Talde berria",
     language: "Hizkuntza",
     theme: "Gaia aldatu",
+  },
+  install: {
+    button: "Aplikazioa instalatu",
+    iosTitle: "iPhone / iPad-en instalatu",
+    iosStep1: "Safarin, sakatu Partekatu botoia",
+    iosStep2: "Jaitsi eta aukeratu «Gehitu hasierako pantailan».",
+    iosStep3: "Sakatu «Gehitu». Aplikazioa bere ikonoarekin agertuko da hasierako pantailan.",
+    close: "Itxi",
   },
   dashboard: {
     greeting: "Kaixo, entrenatzaile",
